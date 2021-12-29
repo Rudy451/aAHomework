@@ -26,9 +26,10 @@ class Play:
             curr.execute("INSERT INTO plays(title, year, playwright_id) VALUES (?, ?, ?)", (self.title, self.year, self.playwright_id))
             curr.execute("SELECT * FROM plays")
             result = curr.fetchall()
-            con.commit()
             self.id = result[len(result) - 1]
             print(self.id[0])
+            con.commit()
+            con.close()
         except AssertionError:
             print("Already in database")
 
