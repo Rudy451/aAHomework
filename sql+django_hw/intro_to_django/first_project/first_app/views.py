@@ -1,15 +1,17 @@
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def home(request):
-  return HttpResponse("THIS IS MY HOUSE!!!!")
+  return render(request, 'homepage.html')
 
 def kitchen(request):
   return HttpResponse(request.body)
 
 def bath(request):
-  return HttpResponse("THIS IS MY BATHROOM!!!!")
+  if request.session.has_key("session_token"):
+    del request.session["session_token"]
+  return render(request, 'bathroom.html')
 
 def bed(request):
   return HttpResponse("THIS IS MY BEDROOM!!!!")

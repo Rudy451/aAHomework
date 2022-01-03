@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load my_template_tags %}
+
+{% block content %}
+<body>
+  <h2>This is my Bathroom</h2>
+  <main>
+    <li>Sink</li>
+    <li>Toilet</li>
+    <li>Shower</li>
+    <li>Window</li>
+  </main>
+  {% my_template_method 40 %}
+  {% get_current_time "%H:%M" as current_time %}
+  <br><br>
+  Time: {{ current_time }}
+  <br><br>
+  <button type="submit"><a href="/">Back to Entrance</a></button>
+</body>
+{% endblock %}
