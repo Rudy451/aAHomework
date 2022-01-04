@@ -41,16 +41,17 @@ console.log("Section #3 - Problme #1");
 herd.forEach(elephant => Elephant.paradeHelper(elephant));
 
 
-function dinerBreakfast(item = ''){
-  myOrder = "I'd like cheesy scrambled eggs"
+function dinerBreakfast(item){
+  let myOrder = "I'd like cheesy scrambled eggs";
   return function order(item){
-    myOrder += `${item === undefined ? '' : ` and ${item}`}`
-    return `${myOrder} please${item === undefined ? '' : '.'}`;
+    let args = Array.from(arguments);
+    myOrder = myOrder.concat(`${args.length == 0 ? '' : ` and ${item}`}`);
+    console.log(`${myOrder} please${item === undefined ? '' : '.'}`);
+    return 0;
   };
 }
 
 console.log("Section #4 - Problem #1");
 let bfastOrder = dinerBreakfast();
-console.log(bfastOrder());
-console.log(bfastOrder("chocolate chip pancakes"));
-console.log(bfastOrder("grits"));
+bfastOrder("chocolate chip pancakes");
+bfastOrder("grits");
