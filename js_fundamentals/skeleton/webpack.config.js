@@ -3,6 +3,7 @@ module.exports = {
   entry: {
     app: ["./js/main.js"]
   },
+  mode: 'development',
   output: {
     path: path.join(__dirname, 'js'),
     publicPath: '/js/',
@@ -10,5 +11,5 @@ module.exports = {
     devtoolModuleFilenameTemplate: '[resourcePath]',
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
   },
-  devtool: 'source-maps',
+  devtool: 'hidden-source-map'
 };
