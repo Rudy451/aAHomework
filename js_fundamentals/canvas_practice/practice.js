@@ -1,0 +1,22 @@
+document.addEventListener("DOMContentLoaded", function(){
+  var myCanvas = document.getElementById("mycanvas");
+  myCanvas.width = 500;
+  myCanvas.height = 500;
+  var ctx = myCanvas.getContext('2d');
+  ctx.fillStyle = "black";
+  ctx.fillRect(20, 30, 500, 500);
+  ctx.beginPath();
+  ctx.arc(150, 150, 25, 0, 2 * Math.PI);
+  ctx.strokeStyle = "yellow";
+  ctx.lineWidth = 2.5;
+  ctx.stroke();
+  ctx.moveTo(325, 250);
+  ctx.lineTo(425, 250);
+  ctx.lineTo(375, 200);
+  ctx.moveTo(325, 250);
+  ctx.lineTo(275, 200);
+  ctx.lineTo(375, 200);
+  ctx.lineWith = 2.5;
+  ctx.strokeStyle = "yellow";
+  ctx.stroke();
+});
